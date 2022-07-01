@@ -24,7 +24,7 @@ $search = !empty($_GET['s']) ? $_GET['s'] : '';
     <h4>Search Documentation and Notes:</h4>
    <form action="" method="get"><input type="text" name="s" style="background: #333; color: #c1f1c1; width:60%; border: 1px dotted #0f0;" value="<?php echo htmlspecialchars($search, ENT_QUOTES, 'UTF-8'); ?>"><input type="submit" value="Search"></form>
    <?php if(!empty($search)):
-     include 'build-index.php';
+     include 'src/build-index.php';
      echo '<h3>Results:</h3>';
      $ind = new Index("refstore.sqlite");
      $r = $ind->search(str_replace('_', '', strtolower($search)));

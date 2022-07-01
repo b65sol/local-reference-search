@@ -1,4 +1,5 @@
 <?php
+define('MAX_FILE_SIZE', 3000000);
 include 'src/build-index.php';
 include 'vendor/wikia/simplehtmldom/simple_html_dom.php';
 if($argc < 2) {
@@ -28,7 +29,8 @@ foreach($scripts as $script) {
 $sel = $html->find($selector);
 $text = '';
 foreach($sel as $selected) {
-  $text .= html_entity_decode(strtolower($selected->plaintext), ENT_COMPAT, 'UTF-8'). ' ';
+  //Deeply nested content may still contain tags, so we do an extra strip tags here.
+  $text .= html_entity_decode(strtolower(strip_tags($selected->plaintext)), ENT_COMPAT, 'UTF-8'). ' ';
 }
 $text = trim($text);
 if(strlen($text) < 20) {
