@@ -1,0 +1,7 @@
+vendor
+manual
+external
+refstore.sqlite
+composer.phar
+reference-1.zip
+refstore.sqlite.index/

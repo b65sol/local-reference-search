@@ -1,0 +1,9 @@
+{
+    "require": {
+        "teamtnt/tntsearch": "^2.1",
+        "wikia/simplehtmldom": "^1.8",
+        "donatello-za/rake-php-plus": "^1.0",
+        "php-ai/php-ml": "^0.8.0",
+        "mixnode/mixnode-warcreader-php": "^0.0.6"
+    }
+}
