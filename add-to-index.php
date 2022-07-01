@@ -39,6 +39,7 @@ if(strlen($text) < 20) {
 }
 
 $titleelem = $html->find('title');
+$title = basename($argv[1]);
 foreach($titleelem as $titleel) {
   $title = html_entity_decode($titleel->plaintext, ENT_COMPAT, 'UTF-8');
 }
